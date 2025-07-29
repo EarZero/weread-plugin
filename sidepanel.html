@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WeRead Side Panel</title>
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .content {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .weread-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .weread-frame[style*="block"] {
+            display: block !important;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        .status {
+            padding: 10px;
+            background: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📚 微信读书侧边栏</h1>
+        <p>使用Python驱动的Chrome扩展</p>
+    </div>
+    
+    <div class="content">
+        <div class="status" id="status">正在初始化...</div>
+        
+        <div class="controls">
+            <button class="btn" id="load-weread">加载微信读书</button>
+            <button class="btn" id="refresh-content">刷新内容</button>
+            <button class="btn" id="toggle-theme">切换主题</button>
+        </div>
+        
+        <div id="output"></div>
+        <iframe id="weread-frame" class="weread-frame" style="display:none;"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation allow-modals"
+                referrerpolicy="no-referrer-when-downgrade"
+                loading="lazy"></iframe>
+    </div>
+    
+    <script src="sidepanel.js"></script>
+</body>
+</html>

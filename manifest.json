@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "WeRead Side Panel - Python驱动",
+  "version": "1.0",
+  "description": "使用Python和Brython开发的微信读书侧边栏扩展",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://weread.qq.com/*"
+  ],
+  
+   
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "打开微信读书侧边栏",
+    "default_icon": {
+      "16": "icon.svg",
+      "32": "icon.svg",
+      "48": "icon.svg",
+      "128": "icon.svg"
+    }
+  },
+  "icons": {
+    "16": "icon.svg",
+    "32": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
